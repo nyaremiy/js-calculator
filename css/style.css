@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --c-border-calc: #223067;
+  --index: calc(1vh + 1vw);
+  --c-bg-calc: #0e0a1f;
+  --c-btn: #0d0f26;
+  --c-bg: #0f050c;
+  --text: #fcf8f7;
+  --font: 'Roboto';
+  --b-radius: 8px;
+}
+
+body {
+  font-family: var(--font), sans-serif;
+  background-color: var(--c-bg);
+}
+
+.main-calcultor {
+  border: 5px solid var(--c-border-calc);
+  background-color: var(--c-bg-calc);
+  height: calc(var(--index) * 30);
+  border-radius: var(--b-radius);
+  width: calc(var(--index) * 20);
+  color: var(--text);
+  margin: 30px auto;
+  padding: 5px;
+}
+
+.main-calcultor__wrapper {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 2px 2px;
+  grid-auto-flow: column;
+  justify-items: center;
+  grid-template-areas:
+    'screen screen screen screen'
+    'screen screen screen screen'
+    'AC pm rate division'
+    'seven eight nine multiplication'
+    'four five six minus'
+    'one two three plus'
+    'zero zero dot equal';
+}
+
+.screen {
+  font-size: calc(var(--index) / 0.5);
+  background: transparent;
+  justify-content: end;
+  align-items: center;
+  grid-area: screen;
+  padding: 10px;
+  display: flex;
+  width: 100%;
+}
+
+.AC {
+  grid-area: AC;
+}
+
+.pm {
+  grid-area: pm;
+}
+
+.rate {
+  grid-area: rate;
+}
+
+.division {
+  grid-area: division;
+}
+
+.multiplication {
+  grid-area: multiplication;
+}
+
+.minus {
+  grid-area: minus;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.equal {
+  grid-area: equal;
+}
+
+.zero {
+  grid-area: zero;
+}
+
+.dot {
+  grid-area: dot;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.six {
+  grid-area: six;
+}
+
+.five {
+  grid-area: five;
+}
+
+.four {
+  grid-area: four;
+}
+
+.three {
+  grid-area: three;
+}
+
+.two {
+  grid-area: two;
+}
+
+.one {
+  grid-area: one;
+}
+
+.btn {
+  font-size: calc(var(--index) / 0.8);
+  background-color: var(--c-btn);
+  border-radius: var(--b-radius);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+}
+
+.btn:active {
+  background-color: var(--c-border-calc);
+}

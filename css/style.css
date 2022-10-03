@@ -20,6 +20,13 @@ body {
   background-color: var(--c-bg);
 }
 
+.container {
+  max-width: 100vw;
+  padding: 0 10px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .main-calcultor {
   border: 5px solid var(--c-border-calc);
   background-color: var(--c-bg-calc);

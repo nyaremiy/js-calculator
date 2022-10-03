@@ -1,1 +1,1 @@
-# js--calculator
+# js-calculator: https://nyaremiy.github.io/js-calculator/

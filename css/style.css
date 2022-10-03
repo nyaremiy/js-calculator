@@ -8,6 +8,8 @@
   --c-border-calc: #223067;
   --index: calc(1vh + 1vw);
   --c-bg-calc: #0e0a1f;
+  --c-bg-page: #340526;
+  --c-shadow: #0d0c0c;
   --c-btn: #0d0f26;
   --c-bg: #0f050c;
   --text: #fcf8f7;
@@ -17,7 +19,7 @@
 
 body {
   font-family: var(--font), sans-serif;
-  background-color: var(--c-bg);
+  background-color: var(--c-bg-page);
 }
 
 .container {
@@ -28,6 +30,7 @@ body {
 }
 
 .main-calcultor {
+  box-shadow: 0px 0px 15px var(--c-shadow);
   border: 5px solid var(--c-border-calc);
   background-color: var(--c-bg-calc);
   height: calc(var(--index) * 30);
@@ -45,7 +48,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-rows: 1fr;
-  gap: 2px 2px;
+  gap: 5px 5px;
   grid-auto-flow: column;
   justify-items: center;
   grid-template-areas:
@@ -64,6 +67,7 @@ body {
   justify-content: end;
   align-items: center;
   grid-area: screen;
+  overflow: hidden;
   padding: 10px;
   display: flex;
   width: 100%;
@@ -158,4 +162,18 @@ body {
 
 .btn:active {
   background-color: var(--c-border-calc);
+}
+
+@media (max-width: 768px) {
+  .main-calcultor {
+    height: calc(var(--index) * 40);
+    width: calc(var(--index) * 30);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-calcultor {
+    height: calc(var(--index) * 33);
+    width: calc(var(--index) * 23);
+  }
 }

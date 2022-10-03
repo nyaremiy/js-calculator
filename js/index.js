@@ -5,7 +5,7 @@ const screen = document.getElementById('js-screen');
 const buttons = document.querySelectorAll('.btn');
 
 const actions = ['%', '/', 'X', '-', '+'];
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.'];
 
 let firstNum = '';
 let secondNum = '';
@@ -66,16 +66,23 @@ buttons.forEach((btn) => {
 function equal() {
   switch (symbol) {
     case '+':
-      return +firstNum + +secondNum;
+      return isDot(+firstNum + +secondNum);
     case '-':
-      return +firstNum - +secondNum;
+      return isDot(+firstNum - +secondNum);
     case 'X':
-      return +firstNum * +secondNum;
+      return isDot(+firstNum * +secondNum);
     case '/':
-      return +firstNum / +secondNum;
+      return isDot(+firstNum / +secondNum);
     case '%':
-      return (+firstNum * +secondNum) / 100;
+      return isDot((+firstNum * +secondNum) / 100);
     default:
       return NaN;
   }
+}
+
+function isDot(item) {
+  if (Number(item) === item && item % 1 !== 0) {
+    return item.toFixed(3);
+  }
+  return item;
 }
